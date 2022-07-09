@@ -9,6 +9,8 @@ import android.widget.ListView
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.example.memorynotes.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.recyclerview.widget.RecyclerView
 
 class ListFragment : Fragment() {
     override fun onCreateView(
@@ -21,13 +23,13 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val addNote = view.findViewById<ListView>(R.id.addNote)
+        val addNote = view.findViewById<FloatingActionButton>(R.id.addNote)
         addNote.setOnClickListener { goToNoteDetails(0, view) }
     }
 
     private fun goToNoteDetails(id: Long = 0L, view: View) {
         val action: NavDirections = ListFragmentDirections.actionGoToNote(id)
-        val notesListView = view.findViewById<ListView>(R.id.notesListView)
+        val notesListView = view.findViewById<RecyclerView>(R.id.notesListView)
 
         Navigation.findNavController(notesListView).navigate(action)
     }

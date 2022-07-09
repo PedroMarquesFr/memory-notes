@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import androidx.navigation.Navigation
 import com.example.memorynotes.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class NoteFragment : Fragment() {
 
@@ -22,7 +22,7 @@ class NoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val checkButton = view.findViewById<ListView>(R.id.checkButton)
+        val checkButton = view.findViewById<FloatingActionButton>(R.id.checkButton)
         checkButton.setOnClickListener { Navigation.findNavController(it).popBackStack() }
     }
 }
