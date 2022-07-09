@@ -14,7 +14,7 @@
             android:id="@+id/actionGoToNote"
             app:destination="@id/noteFragment" />
     </fragment>
-    <fragment
+    <fragmentandroidx.navigation.fragment.NavHostFragment
         android:id="@+id/noteFragment"
         android:name="com.example.memorynotes.presentation.NoteFragment"
         android:label="fragment_note"
@@ -23,5 +23,5 @@
             android:name="noteId"
             app:argType="long"
             android:defaultValue="0L" />
-    </fragment>
+    </fragmentandroidx.navigation.fragment.NavHostFragment>
 </navigation>
